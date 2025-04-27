@@ -1,0 +1,264 @@
+/* Styles dành riêng cho trang Coming Soon */
+
+.coming-soon {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.coming-soon.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.coming-soon::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+    animation: shine 15s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes shine {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.coming-soon h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    position: relative;
+    z-index: 2;
+}
+
+.coming-soon-desc {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: #555;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Countdown styles */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.countdown-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    min-width: 80px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4285f4;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-item span {
+    font-size: 0.8rem;
+    color: #777;
+    font-weight: normal;
+    margin-top: 0.5rem;
+}
+
+.countdown-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
+}
+
+/* Subscribe form styles */
+.subscribe-container {
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+#subscribe-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#notify-email {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.subscribe-button {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 0 50px 50px 0;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.subscribe-button:hover {
+    background-color: #3367d6;
+    transform: translateY(-2px);
+}
+
+.success-message {
+    color: #34a853;
+    font-weight: 500;
+    margin-top: 1rem;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Social sharing styles */
+.social-sharing {
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.social-sharing p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    color: #4285f4;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #4285f4;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress bar styles */
+.progress-container {
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.progress-container p {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #4285f4, #34a853);
+    border-radius: 50px;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.progress-text {
+    font-weight: 500;
+    color: #4285f4 !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .coming-soon h1 {
+        font-size: 2.5rem;
+    }
+    
+    .countdown {
+        flex-wrap: wrap;
+    }
+    
+    .countdown-item {
+        min-width: 60px;
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+    
+    #subscribe-form {
+        flex-direction: column;
+    }
+    
+    #notify-email {
+        border-radius: 50px;
+        margin-bottom: 1rem;
+    }
+    
+    .subscribe-button {
+        border-radius: 50px;
+    }
+    
+    .social-icons {
+        flex-wrap: wrap;
+    }
+}
